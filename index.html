@@ -160,18 +160,20 @@
       color: var(--text-color);
     }
 
-  .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  background-color: #000; /* Set to black */
-  color: #fff;            /* Text color white */
-  font-size: 0.9rem;
-  z-index: 10;
-}
-
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: inherit;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
