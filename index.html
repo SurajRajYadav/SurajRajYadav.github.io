@@ -3,41 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to My Site</title>
+  <title>Suraj Raj Yadav - Personal Site</title>
   <style>
-    body {
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --nav-bg: #1c1c1c;
+      --nav-text: #ffffff;
+      --link-color: #3498db;
+      --footer-bg: #1c1c1c;
+      --footer-text: #ffffff;
+    }
+
+    body.dark-mode {
+      --bg-color: #111;
+      --text-color: #f0f0f0;
+      --nav-bg: #000;
+      --nav-text: #ffffff;
+      --link-color: #ffffff;
+      --footer-bg: #000;
+      --footer-text: #ffffff;
+    }
+
+    /* Reset & Base Styles */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #1c1c1c, #2c3e50);
-      color: #fff;
-      text-align: center;
-      padding-top: 15vh;
     }
-    h1 {
-      font-size: 3em;
+
+    /* Navbar */
+    nav {
+      background-color: var(--nav-bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    p {
-      font-size: 1.2em;
-      color: #ccc;
+    nav h1 {
+      color: var(--nav-text);
+      font-size: 1.5rem;
     }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #fff;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
       text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
+      color: var(--nav-text);
+      font-weight: 500;
+      transition: color 0.3s;
     }
-    a:hover {
-      background-color: #2980b9;
+    nav ul li a:hover {
+      color: var(--link-color);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--nav-text);
+      color: var(--nav-text);
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 1rem;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    section ul {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
     }
   </style>
 </head>
 <body>
-  <h1>Hello, I'm Suraj 👋</h1>
-  <p>Welcome to my personal website.</p>
-  <a href="https://www.linkedin.com/in/suraj-raj-yadav/">Visit my LinkedIn</a>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>Suraj</h1>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#research">Research Interests</a></li>
+        <li><a href="#publications">Publications</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+    </div>
+  </nav>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am Suraj Raj Yadav, an enthusiastic cybersecurity professional and researcher with interests in digital privacy, secure systems, and ethical hacking. My goal is to build safe, accessible, and user-centric digital platforms.
+    </p>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>
+      You can download my resume <a href="resume.pdf" target="_blank">here</a>. It includes my academic background, projects, and professional experiences.
+    </p>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>CV</h2>
+    <p>
+      My full curriculum vitae with detailed academic and research experience is available <a href="cv.pdf" target="_blank">here</a>.
+    </p>
+  </section>
+
+  <!-- Research Interests -->
+  <section id="research">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Machine learning for anomaly detection</li>
+      <li>Offensive security and red teaming</li>
+      <li>Cyber threat intelligence</li>
+      <li>Security in financial systems</li>
+    </ul>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul>
+      <li>📄 "A Time-Series Based Machine Learning Approach for Automated Anomaly Detection in Banking Transactions" – Under review</li>
+      <li>📄 "Designing Emotion-Aware Interfaces: A Human-Centred Study on Adaptive UI for Mental Wellbeing" – Submitted to arXiv</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Suraj Raj Yadav. All rights reserved.
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    }
+  </script>
+
 </body>
 </html>
