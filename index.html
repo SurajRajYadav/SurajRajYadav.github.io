@@ -8,7 +8,7 @@
     :root {
       --bg-color: #f9f9f9;
       --text-color: #333;
-      --nav-bg: #1c1c1c;
+      --nav-bg: rgba(28, 28, 28, 0.4);
       --nav-text: #ffffff;
       --link-color: #3498db;
       --footer-bg: #1c1c1c;
@@ -18,29 +18,31 @@
     body.dark-mode {
       --bg-color: #111;
       --text-color: #f0f0f0;
-      --nav-bg: #000;
+      --nav-bg: rgba(0, 0, 0, 0.4);
       --nav-text: #ffffff;
       --link-color: #ffffff;
       --footer-bg: #000;
       --footer-text: #ffffff;
     }
 
-    /* Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Navbar */
+    /* Glassy Navbar */
     nav {
       background-color: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -48,27 +50,31 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     nav h1 {
       color: var(--nav-text);
       font-size: 1.5rem;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
     }
+
     nav ul li a {
       text-decoration: none;
       color: var(--nav-text);
       font-weight: 500;
       transition: color 0.3s;
     }
+
     nav ul li a:hover {
       color: var(--link-color);
     }
 
-    /* Theme Toggle Button */
     .theme-toggle {
       background: none;
       border: 1px solid var(--nav-text);
@@ -78,22 +84,24 @@
       border-radius: 5px;
       margin-left: 1rem;
     }
+
     .nav-right {
       display: flex;
       align-items: center;
     }
 
-    /* Sections */
     section {
       padding: 100px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
+
     section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    section p {
+
+    section p, section ul {
       font-size: 1.1rem;
       line-height: 1.6;
     }
@@ -108,7 +116,37 @@
       text-decoration: underline;
     }
 
-    /* Footer */
+    /* About Me layout */
+    #about .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    #about .text {
+      flex: 1 1 300px;
+    }
+
+    #about .image {
+      flex: 0 1 250px;
+      text-align: center;
+    }
+
+    #about .image img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      border: 2px solid var(--text-color);
+      opacity: 0.9;
+    }
+
+    #about .image p {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: var(--text-color);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -121,7 +159,7 @@
 
   <!-- Navbar -->
   <nav>
-    <h1>Suraj Raj Yadav</h1>
+    <h1>Suraj</h1>
     <div class="nav-right">
       <ul>
         <li><a href="#about">About Me</a></li>
@@ -135,26 +173,20 @@
   </nav>
 
   <!-- About Me -->
- <!-- About Me -->
-<section id="about">
-  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-    
-    <!-- Left: Text -->
-    <div style="flex: 1 1 300px;">
-      <h2>About Me</h2>
-      <p>
-        I am Suraj Raj Yadav, an enthusiastic cybersecurity professional and researcher with interests in digital privacy, secure systems, and ethical hacking. My goal is to build safe, accessible, and user-centric digital platforms.
-      </p>
+  <section id="about">
+    <div class="about-container">
+      <div class="text">
+        <h2>About Me</h2>
+        <p>
+          I am Suraj Raj Yadav, an enthusiastic cybersecurity professional and researcher with interests in digital privacy, secure systems, and ethical hacking. My goal is to build safe, accessible, and user-centric digital platforms.
+        </p>
+      </div>
+      <div class="image">
+        <img src="https://via.placeholder.com/250x250.png?text=Suraj+Raj+Yadav" alt="Suraj Raj Yadav" />
+        <p>Your Image</p>
+      </div>
     </div>
-
-    <!-- Right: Image Placeholder -->
-    <div style="flex: 0 1 250px; text-align: center;">
-      <img src="your-image.jpg" alt="Suraj Raj Yadav" style="width: 100%; max-width: 250px; border-radius: 10px; border: 2px solid var(--text-color); opacity: 0.9;" />
-      <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-color);">Your Image</p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Resume -->
   <section id="resume">
