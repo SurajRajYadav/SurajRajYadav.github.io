@@ -1,0 +1,196 @@
+
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --nav-bg: rgba(255, 255, 255, 0.2);
+      --nav-text: #000;
+      --link-color: #3498db;
+      --footer-bg: #1c1c1c;
+      --footer-text: #ffffff;
+    }
+
+    body.dark-mode {
+      --bg-color: #111;
+      --text-color: #f0f0f0;
+      --nav-bg: rgba(0, 0, 0, 0.2);
+      --nav-text: #ffffff;
+      --link-color: #3498db;
+      --footer-bg: #000;
+      --footer-text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    nav {
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 12px 12px;
+    }
+
+    nav h1 {
+      color: var(--nav-text);
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--nav-text);
+      font-weight: 500;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--link-color);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      padding: 0.25rem;
+      margin-left: 1rem;
+    }
+
+    .theme-toggle img {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+      transition: filter 0.3s;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    main {
+      flex: 1;
+      overflow-y: auto;
+      margin-top: 60px; /* space for fixed navbar */
+      margin-bottom: 50px; /* space for fixed footer */
+      padding: 2rem;
+    }
+
+    section {
+      padding: 60px 0;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    section p, section ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    section ul {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    /* About Me layout */
+    #about .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    #about .text {
+      flex: 1 1 300px;
+    }
+
+    #about .image {
+      flex: 0 1 250px;
+      text-align: center;
+    }
+
+    #about .image img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      border: 2px solid var(--text-color);
+      opacity: 0.9;
+    }
+
+    #about .image p {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: var(--text-color);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 1rem;
+      color: var(--footer-text);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      z-index: 999;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Light Mode Footer */
+    body:not(.dark-mode) footer {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Dark Mode Footer */
+    body.dark-mode footer {
+      background-color: #fff;
+      color: #000;
+    }
+ 
